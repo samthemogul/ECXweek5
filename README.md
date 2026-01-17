@@ -7,7 +7,7 @@ This project is a Node.js/TypeScript application. Follow the steps below to set 
 
 - [Node.js](https://nodejs.org/) (v18 or later recommended)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
-- [SQLite3](https://www.sqlite.org/download.html) (for local database)
+- MySQL (for local database)
 
 ### 1. Clone the Repository
 
