@@ -1,90 +1,54 @@
-# This is how to setup your typescript project
+
+## ECX Week 5 Project
+
+This project is a Node.js/TypeScript application. Follow the steps below to set up and run it on your computer.
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v18 or later recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
+- [SQLite3](https://www.sqlite.org/download.html) (for local database)
+
+### 1. Clone the Repository
+
+```
+git clone <repo-url>
+cd week5
+```
+
+### 2. Install Dependencies
+
+```
+npm install
+```
+
+### 3. Database Setup
+
+The database uses MySQL. To set up the database:
+
+1. Make sure you have MySQL installed.
+2. Run the schema SQL file to create the tables:
+
+```
+mysql -u unilag -p < ./src/database/schema.sql
+```
+
+You will be prompted to input a pasword, input the password you used when instaling mysql
+
+### 4. Run the Project
+
+To start the development server:
+
+```
+npm run dev
+```
+
+The server should now be running. By default, it will listen on [http://localhost:3000](http://localhost:3000) (or the port specified in your code).
+
+### 5. API Endpoints
+
+See the `src/routes/` directory for available endpoints for courses, enrollments, and students.
 
 ---
 
-## Phase 1: Basic Initialization
-
-First, create your project folder and initialize it.
-
-```bash
-mkdir my-node-project
-cd my-node-project
-npm init -y
-
-```
-
-### Install Dependencies
-
-You’ll need the TypeScript compiler, Node.js type definitions, and a "runner" for development.
-
-* **`typescript`**: The core compiler.
-* **`@types/node`**: Type definitions so TS understands `process`, `fs`, etc.
-* **`tsx`**: The modern, faster successor to `ts-node` for running TS files directly.
-
-```bash
-npm install --save-dev typescript @types/node tsx
-
-```
-
----
-
-## Phase 2: Configuration (`tsconfig.json`)
-
-Generate a configuration file with the latest best practices for Node.js (ESM support).
-
-```bash
-npx tsc --init
-
-```
-
-For a modern Node.js project in 2026, update your `tsconfig.json` with these key settings:
-
-```json
-{
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src/**/*"]
-}
-
-```
-
----
-
-## Phase 3: Project Structure & Scripts
-
-Organize your code by creating a `src` folder.
-
-1. **Create your first file:** `src/index.ts`
-```typescript
-const greeting: string = "Hello, TypeScript!";
-console.log(greeting);
-
-```
-
-
-2. **Update `package.json` scripts:**
-Add these scripts to handle development and production builds.
-```json
-"scripts": {
-  "dev": "tsx watch src/index.ts",
-  "build": "tsc",
-  "start": "node dist/index.js"
-}
-
-```
-
----
-
-## Phase 4: Running Your Project
-
-* **For Development:** Run `npm run dev`. This uses `tsx` to run your code instantly and watches for changes.
-* **For Production:** Run `npm run build` to generate JavaScript in the `dist` folder, then use `npm start`.
+If you encounter any issues, ensure all prerequisites are installed and the database is set up correctly.
