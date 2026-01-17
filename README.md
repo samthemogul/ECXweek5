@@ -27,13 +27,25 @@ npm install
 The database uses MySQL. To set up the database:
 
 1. Make sure you have MySQL installed.
-2. Run the schema SQL file to create the tables:
+2. Create the `unilag` user by running the following:
+
+```
+mysql -u root -p
+```
+Enter the pasword you used when installing or if no pasword, just pres enter.
+Create the user using SQL command:
+```sql
+CREATE USER 'unilag'@'localhost' IDENTIFIED BY 'yourpassword';
+```
+type `quit` to quit the server
+
+3. Run the schema SQL file to create the tables:
 
 ```
 mysql -u unilag -p < ./src/database/schema.sql
 ```
 
-You will be prompted to input a pasword, input the password you used when instaling mysql
+You will be prompted to input a pasword, input the password you set for the `unilag` user
 
 ### 4. Run the Project
 
